@@ -5,7 +5,7 @@ import { getDatabase } from "firebase/database";
 
 // Your Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCaoBfsLk80kr1iukDbIWYVwGSFINNU2Tk",
+  apiKey: "",
   authDomain: "bedsore-prediction.firebaseapp.com",
   databaseURL: "https://bedsore-prediction-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "bedsore-prediction",
