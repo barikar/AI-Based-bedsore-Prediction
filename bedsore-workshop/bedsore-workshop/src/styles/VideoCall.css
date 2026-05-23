@@ -1,0 +1,184 @@
+/* VideoCall.css */
+:root {
+    --primary-color: #1976d2;
+    --secondary-color: #f50057;
+    --success-color: #4caf50;
+    --error-color: #f44336;
+    --dark-bg: #1a1a1a;
+    --light-text: #fff;
+    --border-radius: 12px;
+    --shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s ease;
+  }
+  
+  .video-call-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--dark-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9000;
+    overflow: hidden;
+  }
+  
+  .zego-container {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    background-color: #232323;
+    overflow: hidden;
+    transition: opacity 0.5s ease;
+    border-radius: 4px;
+  }
+  
+  .custom-call-controls {
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    z-index: 100;
+  }
+  
+  .end-call-button {
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+    border: none;
+    border-radius: 50px;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .end-call-button:hover {
+    background-color: #d1004b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  }
+  
+  .end-call-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .call-status-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+  }
+  
+  .call-status-content {
+    text-align: center;
+    color: var(--light-text);
+    padding: 24px;
+    max-width: 90%;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .call-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  .call-status-content h2 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  
+  .call-status-content p {
+    margin-bottom: 24px;
+    opacity: 0.8;
+  }
+  
+  .error-message {
+    color: #ff8a80;
+    font-weight: 500;
+    margin: 8px 0 16px;
+  }
+  
+  /* Video modal animation */
+  .video-modal {
+    animation: modalFadeIn 0.4s ease-out;
+  }
+  
+  @keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Media queries for responsive design */
+  @media (max-width: 768px) {
+    .custom-call-controls {
+      bottom: 16px;
+    }
+    
+    .end-call-button {
+      padding: 10px 24px;
+      font-size: 1rem;
+    }
+    
+    .call-status-content h2 {
+      font-size: 1.4rem;
+    }
+    
+    .call-icon {
+      font-size: 40px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .zego-container {
+      height: 85vh;
+    }
+    
+    .custom-call-controls {
+      bottom: 12px;
+    }
+    
+    .end-call-button {
+      padding: 8px 20px;
+      font-size: 0.9rem;
+    }
+    
+    .call-status-content h2 {
+      font-size: 1.2rem;
+    }
+    
+    .call-icon {
+      font-size: 36px;
+    }
+  }
