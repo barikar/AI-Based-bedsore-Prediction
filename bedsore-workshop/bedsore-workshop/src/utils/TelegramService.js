@@ -5,9 +5,9 @@ import { database } from '../firebase';
 class TelegramService {
   constructor() {
     // Telegram Bot configuration
-    this.botToken = '8411652761:AAEuqeMd1YyZcMfT2u02bttQwwa4Ib823Oc'; // Replace with your actual bot token
+    this.botToken = ; // Replace with your actual bot token
     this.apiUrl = `https://api.telegram.org/bot${this.botToken}`;
-    this.emergencyChatId = '6288258757'; // Replace with your emergency channel/group chat ID
+    this.emergencyChatId = ; // Replace with your emergency channel/group chat ID
     this.isEnabled = true; // Set to true to enable Telegram notifications
     this.isDevelopment = false; // Set to false in production
   }
